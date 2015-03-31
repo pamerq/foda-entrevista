@@ -14,7 +14,8 @@ def split_bill(price, discount, people):
      - si dividen 1 plato entre 3 seria [(1/3), (1/3), (1/3)]
      - tambien pueden existir divisiones desiguales: 3 personas pero 1 de ellas paga la mitad
         [(1/2), (1/4), (1/4)]
-    :return:
+    :return: array con el monto a pagar para cada persona
+    Ej: monto S/. 20 y people = [(1/2), (1/2)] => [10, 10]
     """
     raise NotImplementedError
 
