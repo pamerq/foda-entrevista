@@ -5,23 +5,16 @@ import unittest
 
 
 def split_bill(price, discount, people):
-    """
-    divide la cuenta de una mesa
-    :param price: precio a dividir
-    :param discount: descuento, si no hay descuento el valor es 0. el valor representa el
-    porcentaje [0,100]
-    :param people: array con numeros de la parte que le corresponde a cada persona
-     Ej:
-     - si dividen 1 plato entre 3 seria [(1/3), (1/3), (1/3)]
-     - tambien pueden existir divisiones desiguales: 3 personas pero 1 de ellas paga la mitad
-        [(1/2), (1/4), (1/4)]
-    :return: array con el monto a pagar para cada persona despues de aplicar el descuento
-    Ej:
-    monto S/. 20 y people = [(1/2), (1/2)] => [10, 10]
-    """
+    list_price = list()
+    if(price<=0): return list_price
+    if(discount<0): return list_price;
+	if(len(people)<=0): return list_price;
+	total=0;
+    for person in people:
+		total=total+person
+	if(round(total)<>1): return list_price
 
     new_price = price * (1 - (discount / float(100)))
-    list_price = list()
     for person in people:
         list_price.append(new_price * person)
     return list_price
@@ -77,5 +70,3 @@ def main(argv=None):
 
 if __name__ == '__main__':
     sys.exit(main())
-
-
