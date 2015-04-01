@@ -19,7 +19,12 @@ def split_bill(price, discount, people):
     Ej:
     monto S/. 20 y people = [(1/2), (1/2)] => [10, 10]
     """
-    raise NotImplementedError
+
+    new_price = price * (1 - (discount / float(100)))
+    list_price = list()
+    for person in people:
+        list_price.append(new_price * person)
+    return list_price
 
 
 class SplitBillTestCase(unittest.TestCase):
@@ -36,7 +41,7 @@ class SplitBillTestCase(unittest.TestCase):
         s = sum(s)
         self.assertEquals(s, 127.49)
 
-    def wrong_sum(self):
+    def test_wrong_sum(self):
         s = split_bill(price=1, discount=0,
                        people=[(1 / 10), (1 / 10), (1 / 10), (1 / 10), (1 / 10),
                                (1 / 10), (1 / 10), (1 / 10), (1 / 10), (1 / 10)])
